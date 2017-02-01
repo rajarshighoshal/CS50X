@@ -40,6 +40,9 @@ int main(int argc, string argv[])
         printf("%c",c[i]);
         }
         printf("\n");
+        
+        free(c);
+        
         return 0;
     }
 }
