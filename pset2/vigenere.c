@@ -74,6 +74,8 @@ int main(int argc, char* argv[])
         }
         printf("\n");
         
+        free(ciphertext);
+        
         return 0;
     }
 }
