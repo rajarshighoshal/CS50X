@@ -1,3 +1,8 @@
+/**code to collect input from user as an array
+*coolect initials of each word given by user
+*capitalize the initials
+*prints them in the proper order
+*/
 #include<stdio.h>
 #include<string.h>
 #include<cs50.h>
