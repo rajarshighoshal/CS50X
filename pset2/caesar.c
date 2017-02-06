@@ -23,7 +23,7 @@ int main(int argc, string argv[])
         
         //converting plaintext in cipher
         printf("ciphertext: ");
-        char *c = malloc(sizeof(char)*l);
+        char *c = malloc((sizeof(char)*l) + 1);
         for (int i = 0; i < l; i++)
         {
                 //for uppercase letters
