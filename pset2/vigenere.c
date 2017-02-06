@@ -32,7 +32,7 @@ int main(int argc, char* argv[])
         int l = strlen(plaintext);    //l is length of plaintext
         
         //defining ciphertext
-        char *ciphertext = malloc(sizeof(char)*l);
+        char *ciphertext = malloc((sizeof(char)*l) + 1);
         
         //count_alpha == variable for counting alpha
         int count_alpha = 0;
