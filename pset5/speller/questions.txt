@@ -1,0 +1,38 @@
+0.  What is pneumonoultramicroscopicsilicovolcanoconiosis?
+Ans. This is a word invented by president of National Puzzler's League for the disease known as silicosis. 
+     Silicosis is a form of occupational lung disease caused by inhalation of crystalline silica dust, 
+     and is marked by inflammation and scarring in the form of nodular lesions in the upper lobes of the lungs.
+     It is a type of pneumoconiosis.
+
+1.  According to its man page, what does getrusage do?
+Ans. Get resource usage is the function of getrusage function. In this particular program it is returning resource 
+     usage statistics for dictionary loading/unloading process. In this case it returns sum of resources used by all 
+     threads in the process.
+
+2.  Per that same man page, how many members are in a variable of type struct rusage?
+Ans. 2 struct timeval and 14 long.
+
+3.  Why do you think we pass before and after by reference (instead of by value) to calculate,
+    even though we’re not changing their contents?
+Ans.  According to the declaration of getrusage, getrusage takes int who and struct rusage *usage as arguments. So, we 
+      must pass the pointers to before and after to getrusage function.
+    
+4.  Explain as precisely as possible, in a paragraph or more, how main goes about reading words from a file.
+    In other words, convince us that you indeed understand how that function’s for loop works.
+Ans. After loading a textfile and a dictionary, main() function starts reading a text symbol-by-symbol, 
+     with a goal of constructing separate words. A word is completed when one or more alphabetic symbols are read, 
+     and we encounted a non-alphanumeric character (like spacebar, or newline). Then we check our word for misspellings,
+     reset the word index to zero, and continue the symbol reading loop. If we encounter a digit, 
+     or a string tends to be too long, we traverse this word in the text, but we won't check it for misspellings.
+
+5.  Why do you think we used fgetc to read each word’s characters one at a time rather than use fscanf with a format 
+    string like "%s" to read whole words at a time? Put another way, what problems might arise by relying on fscanf 
+    alone?
+Ans. There are several problems with fscanf - first, you must allocate a memory for a string before reading it from 
+     file, and there are no limits of a length of a word in a text file. Also you can't write program logic for 
+     skipping alphanumeric words, like this implementation of speller has. Overall, this approach gives us much less 
+     flexibility.
+
+6.  Why do you think we declared the parameters for check and load as const (which means "constant")?
+Ans. The parameters passed into these functions shold not be modified in any case. So, to force this we passed const 
+     char* as we cannot modify the contents of const char.
